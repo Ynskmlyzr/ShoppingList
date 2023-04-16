@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/shoppingListFragment">
+
+    <fragment
+        android:id="@+id/shoppingListFragment"
+        android:name="com.example.shopapp.view.ShoppingListFragment"
+        android:label="fragment_shopping_list"
+        tools:layout="@layout/fragment_shopping_list" >
+        <action
+            android:id="@+id/action_shoppingListFragment_to_pastShoppingListFragment"
+            app:destination="@id/pastShoppingListFragment"
+            app:popUpTo="@id/shoppingListFragment"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/pastShoppingListFragment"
+        android:name="com.example.shopapp.view.PastShoppingListFragment"
+        android:label="fragment_past_shopping_list"
+        tools:layout="@layout/fragment_past_shopping_list" >
+        <action
+            android:id="@+id/action_pastShoppingListFragment_to_shoppingListFragment"
+            app:destination="@id/shoppingListFragment" />
+        <action
+            android:id="@+id/action_pastShoppingListFragment_to_detailPastShoppingListFragment"
+            app:destination="@id/detailPastShoppingListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailPastShoppingListFragment"
+        android:name="com.example.shopapp.view.DetailPastShoppingListFragment"
+        android:label="fragment_detail_past_shopping_list"
+        tools:layout="@layout/fragment_detail_past_shopping_list" >
+        <action
+            android:id="@+id/action_detailPastShoppingListFragment_to_pastShoppingListFragment"
+            app:destination="@id/pastShoppingListFragment"
+            app:popUpTo="@id/detailPastShoppingListFragment"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+</navigation>
