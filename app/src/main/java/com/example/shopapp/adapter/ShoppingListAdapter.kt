@@ -35,6 +35,7 @@ class ShoppingListAdapter : RecyclerView.Adapter<ShoppingListAdapter.ListHolder>
                 pieceViewClikListener(number,position)
             }
             imgInterest.setOnClickListener {
+                number=list.get(position).shoppingPiece!!.toInt()
                 if(number > 1){
                     number=list.get(position).shoppingPiece!!.toInt()
                     number--
